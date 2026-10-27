@@ -1,0 +1,23 @@
+# docker compose up --build   ->  UI on http://localhost:8080, API docs on http://localhost:8000/docs
+# Ollama runs on the HOST (so it can use the GPU / Metal); the container reaches it via host.docker.internal.
+services:
+  backend:
+    build: { context: ./backend, args: { WITH_ML: "false" } }   # set to "true" for local embeddings (adds PyTorch)
+    environment:
+      OLLAMA_URL: ${OLLAMA_URL:-http://host.docker.internal:11434}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2:3b}
+      EMBEDDING_BACKEND: ${EMBEDDING_BACKEND:-auto}
+      DOCUDIFF_API_TOKEN: ${DOCUDIFF_API_TOKEN:-}   # optional shared secret; if set, put a reverse proxy in front that sends "Authorization: Bearer <token>"
+      EXTRACT_TIMEOUT_S: ${EXTRACT_TIMEOUT_S:-120}
+      EXTRACT_MAX_RSS_MB: ${EXTRACT_MAX_RSS_MB:-1500}
+    security_opt: ["no-new-privileges:true"]
+    mem_limit: 3g   # hard container ceiling in addition to the per-parse watchdog
+    extra_hosts: ["host.docker.internal:host-gateway"]
+    volumes: ["docudiff-data:/data"]
+    ports: ["127.0.0.1:8000:8000"]
+  frontend:
+    build: ./frontend
+    depends_on: [backend]
+    ports: ["127.0.0.1:8080:80"]
+volumes:
+  docudiff-data:

@@ -1,0 +1,10 @@
+seed 5021:
+  gold ADDED   'The reporting entity shall maintain segregation of client funds before any amount above Rs. 57,000 is disbursed.'
+    -> NEEDS_REVIEW[fuzzy, conf=0.558] old='2.3 The branch manager shall report suspicious activity concerning linked accounts before any amount\nabove Rs. 59,000 is disbursed.' new='2.3 The reporting entity shall maintain segregation of client funds before any amount above Rs. 57,000\nis disbursed.'
+  gold REMOVED 'The branch manager shall report suspicious activity concerning linked accounts before any amount above Rs. 59,000 is disbursed.'
+    -> NEEDS_REVIEW[fuzzy, conf=0.558] old='2.3 The branch manager shall report suspicious activity concerning linked accounts before any amount\nabove Rs. 59,000 is disbursed.' new='2.3 The reporting entity shall maintain segregation of client funds before any amount above Rs. 57,000\nis disbursed.'
+seed 5025:
+  gold ADDED   'The institution shall disclose fees applicable to retail borrowers within 28 days of onboarding.'
+    -> NEEDS_REVIEW[fuzzy, conf=0.452] old='3.1 The reporting entity shall approve exceptions requested by relationship managers within 62 days of\nonboarding.' new='3.1 The institution shall disclose fees applicable to retail borrowers within 28 days of onboarding.'
+  gold REMOVED 'The reporting entity shall approve exceptions requested by relationship managers within 62 days of onboarding.'
+    -> NEEDS_REVIEW[fuzzy, conf=0.452] old='3.1 The reporting entity shall approve exceptions requested by relationship managers within 62 days of\nonboarding.' new='3.1 The institution shall disclose fees applicable to retail borrowers within 28 days of onboarding.'

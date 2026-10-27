@@ -1,0 +1,2 @@
+# Optional: local semantic embeddings / reranking. Installs PyTorch (a few hundred MB on CPU).
+sentence-transformers>=3.0

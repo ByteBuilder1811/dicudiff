@@ -1,0 +1,72 @@
+{
+  "split": "dev",
+  "seeds": "0-9",
+  "pairs": 10,
+  "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+  "semantic_embeddings": true,
+  "added": {
+    "precision": 1.0,
+    "recall": 0.95,
+    "f1": 0.974,
+    "tp": 19,
+    "fp": 0,
+    "fn": 1,
+    "surfaced_recall_incl_needs_review": 1.0
+  },
+  "removed": {
+    "precision": 1.0,
+    "recall": 0.95,
+    "f1": 0.974,
+    "tp": 19,
+    "fp": 0,
+    "fn": 1,
+    "surfaced_recall_incl_needs_review": 1.0
+  },
+  "modified": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "tp": 20,
+    "fp": 0,
+    "fn": 0,
+    "surfaced_recall_incl_needs_review": 1.0
+  },
+  "alignment_accuracy_unchanged_clauses": 1.0,
+  "unchanged_clauses_n": 117,
+  "headings_unchanged_accuracy": 1.0,
+  "needs_review": {
+    "count": 1,
+    "true_modified_pair": 0,
+    "removed_x_added_pair": 1,
+    "other": 0
+  },
+  "retrieval": {
+    "bm25": {
+      "n": 77,
+      "recall@1": 0.727,
+      "recall@3": 0.987,
+      "recall@5": 1.0,
+      "mrr": 0.854
+    },
+    "dense": {
+      "n": 77,
+      "recall@1": 0.805,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "mrr": 0.894
+    },
+    "hybrid": {
+      "n": 77,
+      "recall@1": 0.779,
+      "recall@3": 1.0,
+      "recall@5": 1.0,
+      "mrr": 0.885
+    }
+  },
+  "citation_page_correctness": 1.0,
+  "end_to_end_seconds_per_pair": {
+    "mean": 0.676,
+    "p95": 1.841
+  },
+  "machine": "arm64 Darwin py3.12.3"
+}
